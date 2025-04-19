@@ -28,4 +28,4 @@ You can install them using:
 
 ```bash
 
-pip install pandas numpy scikit-learn matplotlib fastapi
+pip install pandas numpy scikit-learn matplotlib fastapi jinja2
