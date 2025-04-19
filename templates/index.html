@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    
+</head>
+<body>
+
+    <h1>Weather Prediction</h1>
+
+    <div id="outer">
+        <form action="/predict" method="post">
+
+            <label for="p">Enter Precipitation</label>
+            <input type="number" name="p" step="any" required />
+
+            <label for="tmax">Enter Max Temperature</label>
+            <input type="number" name="tmax" step="any" required />
+
+            <label for="tmin">Enter Min Temperature</label>
+            <input type="number" name="tmin" step="any" required />
+
+            <label for="w">Enter Wind Speed</label>
+            <input type="number" name="w" step="any" required />
+
+            <button type="submit">Predict!</button>
+        </form>
+
+        {% if values %}
+            <div class="message success">
+                <strong>Prediction:</strong> {{ values }}
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="message error">
+                <strong>Error:</strong> {{ error }}
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
